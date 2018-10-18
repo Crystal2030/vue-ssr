@@ -1,4 +1,4 @@
-import footer from '../assets/styles/footer.styl';
+import footer from '../../assets/styles/footer.styl';
 
 export default {
     data() {
