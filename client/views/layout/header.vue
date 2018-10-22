@@ -1,16 +1,16 @@
 <template>
-    <header class="main-header">
+    <header :class="$style.mainHeader">
         <h1>TodoList</h1>
     </header>
 </template>
 
 <script>
     export default {
-        name: "header"
+      name: 'header'
     }
 </script>
 
-<style lang="stylus" scoped>
+<style lang="stylus" module>
     .main-header{
         text-align center
         h1{
