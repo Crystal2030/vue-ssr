@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+    h2{
+      width: min-content; // 宽度收缩到最小，如果是默认状态，宽度应该是最窄单词的宽度
+      white-space: nowrap; // 由于设置了white-space:nowrap，因此，宽度就是最长的那一行字符宽度
+    }
+    p{
+      font-size: 12px;
+      color: #333;
+      white-space: normal; // 由于P标签设置了white-space:normal，因此，最终宽度就是大字号标题的最长的那一行的宽度，最终实现预期效果。
+    }
+  </style>
+</head>
+<body>
+<div>
+  题目要求：
+  1. P标签的最大宽度不可以大于H2标签文字宽度的10% <br>
+  这里应该是P标签的最大宽度由前面的匿名内联元素宽度（就是大字号文字宽度）决定，可参见最后期望效果GIF示意。 <br>
+  <br>
+  2. H2标签不能失去高度（h2 文字高度+p 标签高度 = h2 标签高度）
+</div>
+<h2>
+  IPHONE XR<br>
+  IS THE FUCKING<br>
+  BEST EVER MADE
+  <p>iPhone XR has not been authorized as required by the rules of the Federal Communications Commission. iPhone XR is not, and may not be, offered for sale or lease, or sold or leased, until authorization is obtained.</p>
+</h2>
+</body>
+</html>
