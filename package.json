@@ -13,7 +13,6 @@
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",
     "precommit": "npm run lint",
     "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js"
-
   },
   "repository": {
     "type": "git",
@@ -28,13 +27,16 @@
   "dependencies": {
     "vue": "^2.5.16",
     "vue-loader": "^13.7.2",
+    "vue-router": "^3.0.1",
     "webpack": "^3.12.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
+    "babel-helper-vue-jsx-merge-props": "^2.0.3",
     "babel-loader": "^7.1.4",
+    "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "babel-plugin-syntax-jsx": "^6.18.0",
     "babel-plugin-transform-vue-jsx": "^3.7.0",
     "babel-preset-env": "^1.7.0",
@@ -50,7 +52,7 @@
     "eslint-plugin-standard": "^4.0.0",
     "extract-text-webpack-plugin": "^3.0.2",
     "file-loader": "^1.1.11",
-    "html-webpack-plugin": "^3.2.0",
+    "html-webpack-plugin": "^2.30.1",
     "husky": "^1.1.2",
     "postcss-loader": "^2.1.5",
     "rimraf": "^2.6.2",
