@@ -12,8 +12,8 @@ export default [
   {
     props: true, // 会把:id作为Todo这个组件的props传进去，而不用使用this.$route这个对象获取
     // props: (route) => ({id: route.query.b}),
-    path: '/app/:id', //  /app/xxxx
-    // path: '/app',
+    // path: '/app/:id', //  /app/xxxx
+    path: '/app',
     component: () => import('../views/todo/todo.vue'),
     // components: {
     //   default: Todo,

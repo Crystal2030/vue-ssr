@@ -2,8 +2,8 @@
   <div id="app">
     <div id="cover"></div>
     <Header></Header>
-    <p>{{counter}}</p>
-    <p>{{fullName}}</p>
+    <!--<p>{{counter}}</p>-->
+    <!--<p>{{fullName}}</p>-->
     <!--<p>A modules text: {{textA}}</p>-->
     <!--<p>B modules: {{textB}}</p>-->
     <!--<p>C modules: {{textC}}</p>-->
