@@ -12,6 +12,7 @@
     <!--<router-link to="/app/123">app</router-link>-->
     <router-link to="/app">app</router-link>
     <router-link to="/login">login</router-link>
+    <a @click="goBaidu">goBaidu</a>
     <!--<router-link to="/login/exact">login exact</router-link>-->
     <transition name="fade">
       <router-view></router-view>
@@ -94,7 +95,10 @@
     },
     methods: {
       ...mapActions(['updateCountAsync']),
-      ...mapMutations(['updateCount'])
+      ...mapMutations(['updateCount']),
+      goBaidu () {
+        window.location.href = 'https://www.baidu.com/'
+      }
     }
 
   }

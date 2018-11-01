@@ -5,14 +5,15 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.config.client.js",
+    "build:client": "cross-env NODE_ENV=production webpack --config build/webpack.c  onfig.client.js",
     "build": "npm run clean && npm run build:client",
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
     "clean": "rimraf dist",
     "lint": "eslint --ext .js --ext .jsx --ext .vue client/",
     "lint-fix": "eslint --fix --ext .js --ext .jsx --ext .vue client/",
     "precommit": "npm run lint",
-    "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js"
+    "practice": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.practice.js",
+    "dev:client": "cross-env NODE_ENV=development webpack-dev-server --config build/webpack.config.client.js",
+    "dev:server": "cross-env NODE_ENV=development node server/server.js"
   },
   "repository": {
     "type": "git",
@@ -25,11 +26,14 @@
   },
   "homepage": "https://github.com/Crystal2030/vue-ssr#readme",
   "dependencies": {
+    "axios": "^0.18.0",
+    "ejs": "^2.6.1",
+    "koa": "^2.6.1",
+    "koa-router": "^7.4.0",
     "vue": "^2.5.16",
-    "vue-loader": "^13.7.2",
     "vue-router": "^3.0.1",
-    "vuex": "^3.0.1",
-    "webpack": "^3.12.0"
+    "vue-server-renderer": "^2.5.17",
+    "vuex": "^3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "^7.2.6",
@@ -56,14 +60,17 @@
     "file-loader": "^1.1.11",
     "html-webpack-plugin": "^2.30.1",
     "husky": "^1.1.2",
+    "memory-fs": "^0.4.1",
     "postcss-loader": "^2.1.5",
     "rimraf": "^2.6.2",
     "style-loader": "^0.21.0",
     "stylus": "^0.54.5",
     "stylus-loader": "^3.0.2",
     "url-loader": "^1.0.1",
+    "vue-loader": "^13.7.2",
     "vue-style-loader": "^4.1.2",
     "vue-template-compiler": "^2.5.16",
+    "webpack": "^3.12.0",
     "webpack-dev-server": "^2.11.2",
     "webpack-merge": "^4.1.4"
   }

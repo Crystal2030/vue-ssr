@@ -3,6 +3,7 @@ const webpack = require('webpack');
 const merge = require('webpack-merge');
 const ExtractPlugin = require('extract-text-webpack-plugin');
 const HTMLPlugin = require('html-webpack-plugin');
+const VueClientPlugin = require('vue-server-renderer/client-plugin');
 
 const baseConfig = require('./webpack.config.base');
 
@@ -30,7 +31,8 @@ const defaultPlugins = [
   }),
   new HTMLPlugin({
     template: path.join(__dirname, '../practice/template.html')
-  })
+  }),
+  new VueClientPlugin()
 ];
 
 if (isDev) {

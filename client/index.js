@@ -49,9 +49,9 @@ const store = createStore()
 //   next()
 // })
 //
-// router.afterEach((to, from) => {
-//   console.log('router after involke ----->')
-// })
+router.afterEach((to, from) => {
+  console.log('router after involke ----->', to, from, document.referrer)
+})
 
 new Vue({
   router,

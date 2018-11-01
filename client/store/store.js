@@ -22,7 +22,7 @@ export default () => {
     actions,
     plugins: [ // plugin的定义
       (store) => {
-        console.log('vuex plugins---->>', store)
+        console.log('vuex plugins---->>')
       }
     ]
     // modules: {
