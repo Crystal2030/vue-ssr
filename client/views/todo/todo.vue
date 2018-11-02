@@ -1,28 +1,32 @@
 <template>
     <section class="real-app">
-        <input type="text" class="add-input"
-            autofocus="autofocus"
-            placeholder="接下来做什么？"
-            @keyup.enter="addTodo"
-        >
-        <Item
-                :todo="todo" v-for="todo in filteredTodos"
-                :key="todo.id"
-                @del="deleteTodo" />
-        <Tabs
-                :filter="filter"
-                :todos="todos"
-                @toggle="toggleFilter"
-                @clearAllCompleted="clearAllCompleted"
-        />
-      <!--<router-view></router-view>-->
+      <div class="tab-container">
+        <tabs :value="filter" @change="handleChangeTab">
+          <tab :label="tab" :index="tab" v-for="tab in states" :key="tab" />
+        </tabs>
+      </div>
+      <input type="text" class="add-input"
+        autofocus="autofocus"
+        placeholder="接下来做什么？"
+        @keyup.enter="addTodo"
+      >
+      <Item
+        :todo="todo" v-for="todo in filteredTodos"
+        :key="todo.id"
+        @del="deleteTodo" />
+      <Helper
+        :filter="filter"
+        :todos="todos"
+        @clearAllCompleted="clearAllCompleted"
+      />
+    <!--<router-view></router-view>-->
 
     </section>
 </template>
 
 <script>
 import Item from './item.vue'
-import Tabs from './tabs.vue'
+import Helper from './helper.vue'
 
 let id = 0
 export default {
@@ -47,7 +51,8 @@ export default {
   data () {
     return {
       todos: [],
-      filter: 'all'
+      filter: 'all',
+      states: ['all', 'active', 'completed']
     }
   },
   computed: {
@@ -61,7 +66,6 @@ export default {
     }
   },
   mounted () {
-    console.log(this.id)
   },
   methods: {
     addTodo (e) {
@@ -75,16 +79,16 @@ export default {
     deleteTodo (id) {
       this.todos.splice(this.todos.findIndex(todo => todo.id === id), 1)
     },
-    toggleFilter (state) {
-      this.filter = state
-    },
     clearAllCompleted () {
       this.todos = this.todos.filter(todo => !todo.completed)
+    },
+    handleChangeTab (value) {
+      this.filter = value
     }
   },
   components: {
     Item,
-    Tabs
+    Helper
   }
 }
 </script>
@@ -115,4 +119,7 @@ export default {
         border: none;
         box-shadow: inset 0 -2px 1px rgba(0,0,0,0.03);
     }
+  .tab-container
+    background-color #fff
+    padding 0 15px
 </style>
