@@ -12,7 +12,6 @@
     <!--<router-link to="/app/123">app</router-link>-->
     <router-link to="/app">app</router-link>
     <router-link to="/login">login</router-link>
-    <a @click="goBaidu">goBaidu</a>
     <!--<router-link to="/login/exact">login exact</router-link>-->
     <transition name="fade">
       <router-view></router-view>
@@ -34,6 +33,9 @@
   // import todo from './views/todo/todo.vue'
 
   export default {
+    metaInfo: {
+      title: 'Crystal\'s todo'
+    },
     components: {
       Header,
       // todo,
@@ -95,10 +97,7 @@
     },
     methods: {
       ...mapActions(['updateCountAsync']),
-      ...mapMutations(['updateCount']),
-      goBaidu () {
-        window.location.href = 'https://www.baidu.com/'
-      }
+      ...mapMutations(['updateCount'])
     }
 
   }

@@ -66,11 +66,12 @@ if (isDev) {
 } else {
   config = merge(baseConfig, {
     entry: {
-      app: path.join(__dirname, '../client/index.js'),
+      app: path.join(__dirname, '../client/client-entry.js'),
       vendor: ['vue']
     },
     output: {
       filename: '[name].[chunkhash:8].js',  // 每个chunk会单独打包成一个hash
+      publicPath: '/public/'
     },
     module: {
       rules: [

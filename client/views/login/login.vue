@@ -5,7 +5,10 @@
 
 <script>
     export default {
-      name: 'login'
+      name: 'login',
+      metaInfo: {
+        title: 'Login Page'
+      }
     }
 </script>
 
