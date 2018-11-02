@@ -12,10 +12,13 @@
     <!--<router-link to="/app/123">app</router-link>-->
     <router-link to="/app">app</router-link>
     <router-link to="/login">login</router-link>
+    <button @click="notify">notify</button>
+
     <!--<router-link to="/login/exact">login exact</router-link>-->
     <transition name="fade">
       <router-view></router-view>
     </transition>
+    <!--<notification content="test notify" />-->
     <Footer></Footer>
     <!--<router-view name="a"></router-view>-->
   </div>
@@ -42,8 +45,7 @@
       Footer
     },
     mounted () {
-      console.log('111111', this)
-      console.log(' store---->', this.$store)
+      // console.log(' store---->', this.$store)
       // 虽然可以直接这样修改，但是vuex官方推荐用commit方式提交一个mutations方式修改
       // this.$store.state.count = 3
       // let i = 1
@@ -97,7 +99,13 @@
     },
     methods: {
       ...mapActions(['updateCountAsync']),
-      ...mapMutations(['updateCount'])
+      ...mapMutations(['updateCount']),
+      notify () {
+        this.$notify({
+          content: 'test $notify',
+          btn: 'close'
+        })
+      }
     }
 
   }
